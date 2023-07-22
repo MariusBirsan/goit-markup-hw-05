@@ -15,7 +15,7 @@
   </head>
   <body class="container">
     <header>
-      <a class="top logo" href=""><span>Web</span>Studio</a> 
+      <a class="top logo" href=""><span>Web</span>Studio</a>
       <nav>
         <ul>
           <li><a class="top-links active" href="index.html">Studio</a></li>
@@ -39,7 +39,9 @@
     <main>
       <section class="about-section">
         <h1>EFFECTIVE SOLUTIONS FOR YOUR BUSINESS</h1>
-        <button type="button">Request our services</button>
+        <button data-modal-open type="button request-btn">
+          Request our services
+        </button>
       </section>
       <section class="activities-section">
         <ul class="abilities">
@@ -96,6 +98,9 @@
         <ul class="description">
           <li>
             <img src="images/img1.jpg" alt="writting at keyboard" width="370" />
+            <div class="overlay-text">
+              <h3>DESKTOP APPS</h3>
+            </div>
           </li>
           <li>
             <img
@@ -103,9 +108,15 @@
               alt="holding a mobile phone"
               width="370"
             />
+            <div class="overlay-text">
+              <h3>MOBILE APPS</h3>
+            </div>
           </li>
           <li>
             <img src="images/img3.jpg" alt="holding a tablet" width="370" />
+            <div class="overlay-text">
+              <h3>DESIGN SOLUTIONS</h3>
+            </div>
           </li>
         </ul>
       </section>
@@ -341,5 +352,19 @@
         </div>
       </div>
     </footer>
+
+    <!--Modal window-->
+    <div class="modal is-hidden" data-modal>
+      <div class="modal-content">
+        <button class="close-btn" data-modal-close>
+          <svg class="close-btn-svg">
+            <use href="./images/icons.svg#icon-close-btn"></use>
+          </svg>
+        </button>
+        Continut
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

@@ -6,6 +6,7 @@
   --text-color: #757575;
   --hover-color: #2196f3;
   --backround-text-color: #fff;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -53,12 +54,7 @@ a {
 a:hover,
 a:focus {
   color: var(--hover-color);
-}
-
-.filter:hover,
-.filter:focus {
-  background-color: var(--hover-color);
-  color: var(--backround-text-color);
+  transition: var(--transition);
 }
 
 header a {
@@ -180,6 +176,11 @@ footer ul {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.social-icons {
+  height: 20px;
+  width: 20px;
+}
+
 /*==========Studio styling==========*/
 
 .about-section {
@@ -209,6 +210,14 @@ footer ul {
   font-weight: 700;
   border-radius: 0.25em;
   border-width: 0;
+}
+
+.filter:hover,
+.filter:focus {
+  background-color: var(--hover-color);
+  color: var(--backround-text-color);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
+  transition: var(--transition);
 }
 
 footer {
@@ -282,6 +291,7 @@ footer {
 
 .description {
   gap: 30px;
+  position: relative;
 }
 
 .team-section {
@@ -333,16 +343,12 @@ footer {
   align-items: center;
 }
 
-.social-icons {
-  height: 20px;
-  width: 20px;
-}
-
 .team-icons-border:hover,
 .team-icons-border:focus {
   color: var(--backround-text-color);
   background-color: var(--hover-color);
   border: 22px;
+  transition: var(--transition);
 }
 
 .customers {
@@ -386,6 +392,69 @@ footer {
 .customers-logo-containers:focus {
   color: var(--hover-color);
   border: 1px solid var(--hover-color);
+  transition: var(--transition);
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 4px;
+  color: var(--backround-text-color);
+  background-color: rgba(47, 48, 58, 0.80);
+  width: 370px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-text h3 {
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  padding: 16px;
+  background-color: var(--backround-text-color);
+  width: 528px;
+  height: 581px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 4px;
+}
+
+.is-hidden {
+  visibility: hidden;
+}
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 50%;
+  background-color: var(--backround-text-color);
+}
+
+.close-btn-svg {
+  height: 18px;
+  width: 18px;
 }
 
 /*==========Portofolio styling==========*/
@@ -406,11 +475,6 @@ footer {
   background-color: #f5f4fa;
   border-width: 0;
   font-weight: 500;
-}
-
-.filter:hover,
-.filter:focus {
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
 }
 
 .projects ul {
@@ -438,6 +502,7 @@ footer {
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
     0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  transition: var(--transition);
 }
 
 .projects h3,
