@@ -461,31 +461,42 @@ footer {
 
 .modal {
   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: var(--transition);
+  z-index: 10;
+  background-color: var(--backround-text-color);
+  border-radius: 4px;
+  width: 528px;
+  height: 581px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.modal.is-hidden {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
   top: 0;
   left: 0;
-  flex-shrink: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.20);
-  z-index: ;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.is-hidden{
+  opacity: 1;
+  pointer-events: all;
 }
 
 .modal-content {
   padding: 16px;
-  background-color: var(--backround-text-color);
-  width: 528px;
-  height: 581px;
   margin: 0 auto;
   position: relative;
-  border-radius: 4px;
-  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-}
-
-.is-hidden {
-  visibility: hidden;
 }
 
 .close-btn {
@@ -507,6 +518,7 @@ footer {
   height: 18px;
   width: 18px;
 }
+
 
 /*==========Portofolio styling==========*/
 
