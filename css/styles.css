@@ -160,7 +160,7 @@ nav ul {
 }
 
 .top-links::after {
-  content:"";
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -236,7 +236,8 @@ footer ul {
   justify-content: center;
   align-items: center;
   height: 600px;
-  background: linear-gradient(rgba(47, 48, 58, 0.40), rgba(47, 48, 58, 0.40)), url(../images/background-image.jpg);
+  background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/background-image.jpg);
 }
 
 .about-section h1 {
@@ -263,7 +264,8 @@ footer ul {
 .filter:focus {
   background-color: var(--hover-color);
   color: var(--backround-text-color);
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
 }
 
@@ -446,7 +448,7 @@ footer {
   position: absolute;
   bottom: 4px;
   color: var(--backround-text-color);
-  background-color: rgba(47, 48, 58, 0.80);
+  background-color: rgba(47, 48, 58, 0.8);
   width: 370px;
   height: 70px;
   display: flex;
@@ -459,44 +461,44 @@ footer {
   z-index: 1;
 }
 
+/*==========Modal window==========*/
+
 .modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  transition: var(--transition);
-  z-index: 10;
-  background-color: var(--backround-text-color);
-  border-radius: 4px;
-  width: 528px;
-  height: 581px;
-  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-}
-
-.modal.is-hidden {
-  transform: translate(-50%, -50%) scale(0);
-}
-
-#overlay {
-  position: fixed;
-  opacity: 0;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-}
-
-#overlay.is-hidden{
-  opacity: 1;
-  pointer-events: all;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  transition: var(--transition);
 }
 
 .modal-content {
-  padding: 16px;
-  margin: 0 auto;
+  width: 528px;
+  height: 581px;
+  flex-shrink: 0;
+  background-color: var(--backround-text-color);
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 1px 0px 
+    rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   position: relative;
+  transform: scale(1);
+  transition: var(--transition);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.is-hidden .modal-content {
+  transform: scale(0);
+  transition: var(--transition);
 }
 
 .close-btn {
@@ -509,7 +511,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.10);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: var(--backround-text-color);
 }
@@ -518,7 +520,6 @@ footer {
   height: 18px;
   width: 18px;
 }
-
 
 /*==========Portofolio styling==========*/
 
@@ -588,8 +589,8 @@ footer {
   right: 0;
   height: 0;
   overflow: hidden;
-  background-color: rgba(33, 150, 243, 0.90);
-  transition: .5s ease;
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: 0.5s ease;
   color: red;
 }
 
@@ -618,7 +619,6 @@ footer {
   top: 30%;
 }
 
-
 .first {
   width: 4em;
 }
@@ -646,7 +646,3 @@ footer {
   width: 1600px;
   background: #ececec;
 }
-
-
-
-
