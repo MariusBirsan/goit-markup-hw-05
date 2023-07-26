@@ -174,7 +174,7 @@ nav ul {
   transition: var(--transition);
 }
 
-.top-links:hover::after {
+.top-links:active::after {
   opacity: 100%;
 }
 
